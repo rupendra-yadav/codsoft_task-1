@@ -76,16 +76,19 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "To-Do",
-          style: TextStyle(color: Colors.black),
+          "TODO",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-        centerTitle: false,
-        backgroundColor: secondaryColor,
+        centerTitle: true,
+        backgroundColor: primaryColor,
         elevation: 4,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu),
+            onPressed: createtask,
+            icon: const Icon(
+              Icons.add,
+              size: 30,
+            ),
           )
         ],
       ),
@@ -100,16 +103,6 @@ class _HomeScreenState extends State<HomeScreen> {
             delete: (context) => deletetask(index),
           ),
         ),
-      ),
-      floatingActionButton: IconButton(
-        onPressed: createtask,
-        icon: const Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 40,
-        ),
-        style: const ButtonStyle(
-            backgroundColor: WidgetStatePropertyAll(primaryColor)),
       ),
     );
   }
